@@ -5,7 +5,13 @@ module ApiV0
     include ApiV0::ExceptionHandlers
     helpers ::ApiV0::Helpers
 
-    # mount Ping
+    add_swagger_documentation(
+      mount_path: 'swagger_doc',
+      hide_format: true,
+      hide_documentation_path: true
+    )
+
+    mount Ping
     mount Posts
   end
 end
